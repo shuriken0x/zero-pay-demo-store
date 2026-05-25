@@ -6,6 +6,7 @@ import { LoggerOptions } from "typeorm"
 import { MixedList } from "typeorm/common/MixedList"
 import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions"
 import { z } from "zod"
+import { Initial1779744583796 } from "../db/migrations/1779744583796-initial"
 
 const schema = z.object({
   host: z.string(),
@@ -43,7 +44,7 @@ export default function () {
     // logger: new TypeOrmWinstonLogger() as any,
     logging: logLevels,
     entities: [User, TopUp, ProcessedWebhook] as MixedList<Function>,
-    migrations: [] as MixedList<Function>,
+    migrations: [Initial1779744583796] as MixedList<Function>,
     migrationsTableName: "migrations",
     // installExtensions: true,
     extra: 16,
