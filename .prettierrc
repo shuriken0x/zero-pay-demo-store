@@ -1,4 +1,8 @@
 {
-  "singleQuote": true,
-  "trailingComma": "all"
+  "semi": false,
+  "tailwindPreserveDuplicates": false,
+  "organizeImportsSkipDestructiveCodeActions": true,
+  "printWidth": 120,
+  "bracketSameLine": false,
+  "singleQuote": false
 }

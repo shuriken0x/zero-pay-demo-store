@@ -1,0 +1,8 @@
+import { createZodDto } from "nestjs-zod"
+import { z } from "zod"
+
+const schema = z.object({
+  id: z.coerce.number().int().positive().transform(String),
+})
+
+export class IdDto extends createZodDto(schema) {}

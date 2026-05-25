@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:18.1-alpine
+    env_file:
+      - ".env.development"
+    ports:
+      - "127.0.0.1:5433:5432"
+    environment:
+      PGDATA: /var/lib/postgresql/pgdata
+      TZ: "Europe/Moscow"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+
+volumes:
+  postgres_data:
+
+networks:
+  mainnet:
